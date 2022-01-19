@@ -1,11 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Questions</h1>
+<br>
+<hr>
+<br>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
+      <!--<th>Title</th>-->
       <!--<th>Body</th>-->
       <th colspan="3"></th>
     </tr>
@@ -14,12 +17,14 @@
   <tbody>
     <% @questions.each do |question| %>
       <tr>
-        <td><%= question.title %></td>
+        <td><%= link_to question.title, question %></td>
+        <td><% question.title %></td>
         <td><% question.body %></td>
         <td><% link_to 'Show', question %></td>
         <td><% link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><% link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <tr><td><hr><td></tr>
     <% end %>
   </tbody>
 </table>

@@ -1,11 +1,18 @@
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand">Navbar</a>
+  <!--<a class="navbar-brand">Navbar</a>-->
+  <%= link_to "StackCloud", questions_path, class:"navbar-brand" %>
   <form class="form-inline">
     <input size="50" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
   <span class="navbar-text">
-    Navbar text with an inline element
+    <% if person_signed_in? %>
+    Signed in
+    <br>
+    <%= link_to 'Sign Out', destroy_person_session_path, method: :delete %>
+    <% else %>
+    <%= link_to 'Sign in', new_person_session_path %>
+    <% end %>
   </span>
 </nav>
 <p class="notice"><%= notice %></p>
