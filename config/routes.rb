@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :people
+  devise_for :people, controllers: {
+    sessions: 'people/sessions'
+  }
   resources :questions do
     resources :answers, only: [:create]
   end
