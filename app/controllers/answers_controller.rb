@@ -1,4 +1,10 @@
 class AnswersController < ApplicationController
+
+    def destroy
+        Answer.find(params[:id]).destroy
+        redirect_to question_path(params[:question_id])
+    end
+
     def create
         #create a new answer
         @answer = current_person.answers.new(answer_params)
@@ -17,4 +23,5 @@ class AnswersController < ApplicationController
         .permit(:content)
         .merge(question_id: params[:question_id])
     end
+
 end

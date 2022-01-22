@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     sessions: 'people/sessions'
   }
   resources :questions do
-    resources :answers, only: [:create]
+    resources :answers, only: [:create, :destroy]
   end
   #get 'home/index'
   root "questions#index"
