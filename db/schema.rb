@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_21_183050) do
+ActiveRecord::Schema.define(version: 2022_01_22_124534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,16 +49,19 @@ ActiveRecord::Schema.define(version: 2022_01_21_183050) do
     t.bigint "person_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "parent_id"
     t.index ["person_id"], name: "index_answers_on_person_id"
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
   create_table "comments", force: :cascade do |t|
-    t.string "comment"
+    t.bigint "answer_id", null: false
+    t.bigint "person_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "question_id", null: false
-    t.index ["question_id"], name: "index_comments_on_question_id"
+    t.text "content", null: false
+    t.index ["answer_id"], name: "index_comments_on_answer_id"
+    t.index ["person_id"], name: "index_comments_on_person_id"
   end
 
   create_table "people", force: :cascade do |t|
@@ -86,5 +89,6 @@ ActiveRecord::Schema.define(version: 2022_01_21_183050) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "answers", "people"
   add_foreign_key "answers", "questions"
-  add_foreign_key "comments", "questions"
+  add_foreign_key "comments", "answers"
+  add_foreign_key "comments", "people"
 end

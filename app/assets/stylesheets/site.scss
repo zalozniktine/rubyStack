@@ -1,3 +1,15 @@
 p{
     font-size: 15px;
 }
+.sub-comment {
+    padding-left: 20px;
+}
+
+.sub-comment .textarea {
+    display:none;
+}
+#quickSummary .p1 { display:none; }
+
+.comment-form{
+    display: block;
+}

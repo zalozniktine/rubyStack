@@ -1,5 +1,27 @@
 <article>
     <p><%= answer.content %></p>
 </article>
+
 <%= link_to 'Delete', question_answer_path(@question, answer), method: :delete %>
+
+<a href="">Reply</a>
+<div class="comment-form"> 
+    <%= render partial: 'answers/form', locals: { question: @question, parent: answer }%>
+</div>
 <hr>
+
+<div class="sub-comment">
+<%= render answer.answers %>
+</div>
+
+<script>
+
+    document.querySelectorAll('.comment-form-display').forEach((el) => {
+    el.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        el.nextElementSibling.style = 'display: block;'
+    })
+})
+
+</script>
+

@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: %i[ show edit update destroy ]
-  
+  before_action :authenticate_person!, only: %i[ edit update destroy ]
 
 
   # GET /questions or /questions.json

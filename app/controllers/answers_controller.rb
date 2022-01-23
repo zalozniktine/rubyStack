@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+    before_action :authenticate_person!
 
     def destroy
         Answer.find(params[:id]).destroy
@@ -20,7 +21,7 @@ class AnswersController < ApplicationController
     def answer_params
         params
         .require(:answer)
-        .permit(:content)
+        .permit(:content, :parent_id)
         .merge(question_id: params[:question_id])
     end
 

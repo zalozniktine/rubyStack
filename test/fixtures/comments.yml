@@ -1,7 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  comment: MyString
+  content: MyText
+  answer: one
+  person: one
 
 two:
-  comment: MyString
+  content: MyText
+  answer: two
+  person: two

@@ -15,14 +15,11 @@
 
 <p>
   <strong>Answers:</strong>
-  <%= render @question.answers %>
-  <%= render partial: 'answers/form', locals: { question: @question } %>
+  <%= render @question.answers.where(parent_id: nil) %>
+  <%= render partial: 'answers/form', locals: { question: @question, parent: @answer } %>
 </p>
 
-<p>
-  <strong>Answers:</strong>
-  <%= render 'comments/form' %>
-</p>
+
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>
