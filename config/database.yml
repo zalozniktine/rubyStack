@@ -91,6 +91,6 @@ test:
 #
 production:
   <<: *default
-  database: stack2022_production
-  username: stack2022
-  password: <%= ENV['RUBYSTACK_DATABASE_PASSWORD'] %>
+  database: stack-tine_production
+  username: stack-tine
+  password: <%= ENV['STACK-TINE_DATABASE_PASSWORD'] %>
