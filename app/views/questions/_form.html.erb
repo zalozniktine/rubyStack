@@ -22,8 +22,9 @@
   </div>
 
   <div class="field">
-    <% form.label :person_id %>
-    <%= form.number_field :person_id, id: :question_person_id, value: current_person.id, type: :hidden %>
+    <% if person_signed_in? %>
+      <%= form.number_field :person_id, id: :question_person_id, value: current_person.id, type: :hidden %>
+    <% end %>
   </div>
 
   <div class="actions">
