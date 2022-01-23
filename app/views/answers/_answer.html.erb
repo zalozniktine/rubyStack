@@ -4,7 +4,7 @@
 
 <%= link_to 'Delete', question_answer_path(@question, answer), method: :delete %>
 
-<a href="">Reply</a>
+<a href="" class="comment-form-display textarea">Reply</a>
 <div class="comment-form"> 
     <%= render partial: 'answers/form', locals: { question: @question, parent: answer }%>
 </div>
