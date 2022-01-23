@@ -1,0 +1,47 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <!--<a class="nav-link" href="#">Profile</a>-->
+    <%= link_to 'Profile', edit_person_registration_path, class:"nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to 'Activity', activity_path, class:"nav-link active" %>
+    <!--<a class="nav-link active" href="#">My Activity</a>-->
+  </li>
+</ul>
+
+
+<div class="dropdown">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
+    Select
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <li><button onclick="vprasanja()" class="dropdown-item" >Questions</button></li>
+    <li><button onclick="odgovori()" class="dropdown-item" >Answers</button></li>
+    <li><button onclick="komentarji()" class="dropdown-item">Comments</button></li>
+  </div>
+</div>
+<script>
+  function vprasanja() {
+      //document.getElementById("comment").submit();
+      document.getElementByClass('vprasanja').style.display = "inline";
+      document.getElementByClass('odgovori').style.display = "none";
+      document.getElementByClass('komentarji').style.display = "none";
+  }
+
+  function odgovori() {
+      //document.getElementById("comment").submit();
+      document.getElementByClass('vprasanja').style.display = "none";
+      document.getElementByClass('odgovori').style.display = "inline";
+      document.getElementByClass('komentarji').style.display = "none";
+  }
+
+  function komentarji() {
+      //document.getElementById("comment").submit();
+      document.getElementByClass('vprasanja').style.display = "none";
+      document.getElementByClass('odgovori').style.display = "none";
+      document.getElementByClass('komentarji').style.display = "inline";
+  }
+</script>
+
+<%= render "pages/questions", class:"vprasanja" %>

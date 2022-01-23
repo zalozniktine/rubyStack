@@ -1,0 +1,8 @@
+<% @questions.each do |question| %>
+    <div class="vprasanja">
+      <tr>
+        <td><%= question.title %></td>
+        <td><%= question.body %></td>
+      </tr>
+    </div>
+<% end %>
