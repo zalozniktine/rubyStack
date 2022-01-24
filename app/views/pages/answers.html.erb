@@ -1,0 +1,9 @@
+<%= render partial: 'pages/top'%>
+
+<% @answers.each do |answer| %>
+    <div class="vprasanja">
+      <tr>
+        <td><%= answer.content %></td>
+      </tr>
+    </div>
+<% end %>

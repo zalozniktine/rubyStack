@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   get 'activity', to: 'pages#activity'
+  get 'activity/questions', to: 'pages#questions'
+  get 'activity/answers', to: 'pages#answers'
 
   devise_for :people, controllers: {
     sessions: 'people/sessions'
