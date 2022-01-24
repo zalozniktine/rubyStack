@@ -8,18 +8,51 @@
     <!--<a class="nav-link active" href="#">My Activity</a>-->
   </li>
 </ul>
+<br><br><br>
+<h1>My Questions</h1>
+<div id="vprasanja">
+<% @questions.each do |question| %>
+    <div class="vprasanja">
+      <tr>
+        <td><%= question.title %></td>
+        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    </div>
+<% end %>
+</div>
 
+<hr>
+<h1>My Comments</h1>
+<div id="odgovori">
+<% @comments.each do |comment| %>
+<% @questions.each do |question| %>
+    <div class="vprasanja">
+      <tr>
+        <td><%= comment.content %></td>
+      </tr>
+      <tr>
+        <td><%= link_to 'Delete', question_answer_path(question, comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    </div>
+<% end %>
+<% end %>
+</div>
 
-<div class="dropdown">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
-    Select
-  </a>
-
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <li><%= link_to 'questions', activity_questions_path, class:"nav-link active" %></li>
-    <li><button class="dropdown-item">Answers</button></li>
-    <li><button class="dropdown-item">Comments</button></li>
-  </div>
+<hr>
+<h1>My answers</h1>
+<div id="odgovori">
+<% @answers.each do |answer| %>
+<% @questions.each do |question| %>
+    <div class="vprasanja">
+      <tr>
+        <td><%= answer.content %></td>
+      </tr>
+      <tr>
+        <td><%= link_to 'Delete', question_answer_path(question, answer), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    </div>
+<% end %>
+<% end %>
 </div>
 
 

@@ -9,15 +9,13 @@
   </li>
 </ul>
 
-
 <div class="dropdown">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
     Select
-  </a>
-
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <li><%= link_to 'questions', activity_questions_path, class:"nav-link active" %></li>
-    <li><%= link_to 'answers', activity_answers_path, class:"nav-link" %></li>
-    <li><button class="dropdown-item">Comments</button></li>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <%= link_to 'questions', activity_questions_path, class:"dropdown-item" %>
+    <%= link_to 'answers', activity_answers_path, class:"dropdown-item" %>
+    <a class="dropdown-item" href="#">Something else here</a>
   </div>
 </div>
