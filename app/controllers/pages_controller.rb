@@ -18,6 +18,8 @@ class PagesController < ApplicationController
     end
     def top
     end
+    def policy
+    end
 
     
 end

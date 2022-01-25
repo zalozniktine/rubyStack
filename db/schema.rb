@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_23_141430) do
+ActiveRecord::Schema.define(version: 2022_01_25_100658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,13 +45,23 @@ ActiveRecord::Schema.define(version: 2022_01_23_141430) do
 
   create_table "answers", force: :cascade do |t|
     t.text "content"
-    t.bigint "question_id", null: false
-    t.bigint "person_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "question_id", null: false
+    t.bigint "person_id", null: false
     t.integer "parent_id"
     t.index ["person_id"], name: "index_answers_on_person_id"
     t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.string "liker_type"
+    t.integer "liker_id"
+    t.string "likeable_type"
+    t.integer "likeable_id"
+    t.datetime "created_at"
+    t.index ["likeable_id", "likeable_type"], name: "fk_likeables"
+    t.index ["liker_id", "liker_type"], name: "fk_likes"
   end
 
   create_table "people", force: :cascade do |t|
