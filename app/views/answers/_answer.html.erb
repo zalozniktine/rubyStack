@@ -5,6 +5,16 @@
 
 <%= link_to 'Delete', question_answer_path(@question, answer), method: :delete %>
 
+<% button_to 'Like', question_answer_likes_path(@question, answer), method: :post %>
+<% pre_like = answer.likes.find { |like| like.person_id == current_person.id} %>
+<% if pre_like %>
+  <%= button_to 'Unlike', question_answer_like_path(@question, answer, pre_like), method: :delete %>
+<% else %>
+  <%= button_to 'Like', question_answer_likes_path(@question, answer), class:'textarea', method: :post %>
+<% end %>
+
+<p class="textarea"><%= answer.likes.count %> <%= (answer.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+
 <a href="" class="comment-form-display textarea">Reply</a>
 <div class="comment-form"> 
     <%= render partial: 'answers/form', locals: { question: @question, parent: answer }%>

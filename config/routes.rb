@@ -10,8 +10,11 @@ Rails.application.routes.draw do
     sessions: 'people/sessions'
   }
   resources :questions do
-    resources :answers, only: [:create, :destroy]
+    resources :answers, only: [:create, :destroy] do
+      resources :likes, only: [:create, :destroy]
+    end
   end
+
   #get 'home/index'
 
 

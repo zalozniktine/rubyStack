@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_25_100658) do
+ActiveRecord::Schema.define(version: 2022_01_25_104927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,13 +55,12 @@ ActiveRecord::Schema.define(version: 2022_01_25_100658) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.string "liker_type"
-    t.integer "liker_id"
-    t.string "likeable_type"
-    t.integer "likeable_id"
-    t.datetime "created_at"
-    t.index ["likeable_id", "likeable_type"], name: "fk_likeables"
-    t.index ["liker_id", "liker_type"], name: "fk_likes"
+    t.bigint "answer_id", null: false
+    t.bigint "person_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["answer_id"], name: "index_likes_on_answer_id"
+    t.index ["person_id"], name: "index_likes_on_person_id"
   end
 
   create_table "people", force: :cascade do |t|
@@ -89,4 +88,6 @@ ActiveRecord::Schema.define(version: 2022_01_25_100658) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "answers", "people"
   add_foreign_key "answers", "questions"
+  add_foreign_key "likes", "answers"
+  add_foreign_key "likes", "people"
 end
