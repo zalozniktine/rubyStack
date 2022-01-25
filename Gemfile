@@ -25,9 +25,9 @@ gem 'devise'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 #gem 'omniauth-facebook', '~> 4.0'
-#gem 'omniauth-google-oauth2', '~> 0.4.1'
 #gem 'activerecord-session_store', '~> 1.0'
-gem 'socialization'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

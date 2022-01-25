@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'policy', to: 'pages#policy'
 
   devise_for :people, controllers: {
-    #omniauth_callbacks: 'people/omniauth',
+    omniauth_callbacks: 'people/omniauth_callbacks',
     sessions: 'people/sessions'
   }
   resources :questions do
@@ -14,6 +14,8 @@ Rails.application.routes.draw do
       resources :likes, only: [:create, :destroy]
     end
   end
+
+
 
   #get 'home/index'
 
