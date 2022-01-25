@@ -9,18 +9,20 @@ class LikesController < ApplicationController
     def create
 
       @answer.likes.create(person_id: current_person.id)
-      #redirect_to question_path(@answ)
+      @question = @answer.question_id
+      redirect_to question_path(@question)
 
 end
 def destroy
 
       @like.destroy
-    #  redirect_to post_path(@post)
+      @question = @answer.question_id
+      redirect_to question_path(@question)
+
   end
 
   def already_liked?
-    Like.where(person_id: current_person.id, person_id:
-    params[:person_id]).exists?
+    Like.where(person_id: current_person.id, person_id: params[:person_id]).exists?
 end
 
 def find_answer

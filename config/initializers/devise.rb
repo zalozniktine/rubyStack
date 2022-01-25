@@ -271,7 +271,7 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :google_oauth2, '299093990803-j8u3vddl3u481psjn4ce2ggvc3m2qdoh.apps.googleusercontent.com', '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'
+  config.omniauth :google_oauth2, '973846383263-1rkrl86eigba7sso6q4sge1o7crjf41o.apps.googleusercontent.com', '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'
 
   #config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], scope: 'public_profile,email'
   #config.omniauth :google_oauth2, ENV['299093990803-j8u3vddl3u481psjn4ce2ggvc3m2qdoh.apps.googleusercontent.com'], ENV['GOOGLE_APP_SECRET'], scope: 'userinfo.email,userinfo.profile'

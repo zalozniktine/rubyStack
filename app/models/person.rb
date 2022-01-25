@@ -19,7 +19,7 @@ class Person < ApplicationRecord
           unless person
               person = Person.create(
                  email: data['email'],
-                 password: Devise.friendly_token[0,20]
+                 encrypted_password: Devise.friendly_token[0,20]
               )
           end
           person

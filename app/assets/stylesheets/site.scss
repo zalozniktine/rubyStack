@@ -1,3 +1,5 @@
+
+
 p{
     font-size: 15px;
 }
@@ -15,4 +17,49 @@ p{
 
 .comment-form{
     display: none;
+}
+
+
+
+.arrow2:hover {
+    //background: url("images/down2.png") no-repeat;
+    background: image-url('down2.png') no-repeat;
+}
+.arrow2 {
+    background-size: contain;
+    width: 30px;
+    height: 15px;
+    //background: url("images/downS.png") no-repeat;
+    background: image-url('downS.png') no-repeat;
+    display: inline-block;
+}
+
+.arrowdo {
+    background-size: contain;
+    width: 30px;
+    height: 15px;
+    //background: url("images/downo.png") no-repeat;
+    background: image-url('downo.png') no-repeat;
+    display: inline-block;
+}
+.arrow1:hover {
+    //background: url("images/up2.png") no-repeat;
+    background: image-url('up2.png') no-repeat;
+}
+.arrow1 {
+    background-size: contain;
+    width: 30px;
+    height: 15px;
+    background: image-url('upS.png') no-repeat;
+    //background: url("images/upS.png") no-repeat;
+    display: inline-block;
+}
+
+.arrowo {
+    background-size: contain;
+    width: 30px;
+    height: 15px;
+    background: image-url('upo.png') no-repeat;
+    //background: url("images/upo.png") no-repeat;
+    display: inline-block;
 }
