@@ -11,8 +11,22 @@ class AnswersController < ApplicationController
         else
           @answer.upvote_by current_person
         end
-        render "vote.js.erb"
-      end
+        redirect_to question_path(params[:question_id])
+        #render "vote.js.erb"
+        
+    end
+    
+    def downvote
+        @answer = Answer.find(params[:id])
+        if current_person.voted_down_on? @answer
+          @answer.unvote_by current_person
+        else
+          @answer.downvote_by current_person
+        end
+        redirect_to question_path(params[:question_id])
+        #render "vote.js.erb"
+    end
+    
 
 
     def destroy

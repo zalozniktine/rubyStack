@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_27_083211) do
+ActiveRecord::Schema.define(version: 2022_01_30_110208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,13 @@ ActiveRecord::Schema.define(version: 2022_01_27_083211) do
     t.bigint "question_id", null: false
     t.bigint "person_id", null: false
     t.integer "parent_id"
+    t.integer "cached_votes_total", default: 0
+    t.integer "cached_votes_score", default: 0
+    t.integer "cached_votes_up", default: 0
+    t.integer "cached_votes_down", default: 0
+    t.integer "cached_weighted_score", default: 0
+    t.integer "cached_weighted_total", default: 0
+    t.float "cached_weighted_average", default: 0.0
     t.index ["person_id"], name: "index_answers_on_person_id"
     t.index ["question_id"], name: "index_answers_on_question_id"
   end

@@ -1,10 +1,18 @@
 <% pre_like = answer.likes.find { |like| like.person_id == current_person.id} %>
 <% link_to 'Delete', question_answer_path(@question, answer), method: :delete %>
 
-<table><tr><td>
-Like Answer: 
-<%= render 'answers/upvote_link', answer: answer %>
 
+
+
+<table><tr><td>
+Upvote:
+<%= render 'answers/upvote_link', answer: answer %>
+<br>
+Downvote:
+<%= render 'answers/downvote_link', answer: answer %>
+<br>
+Count:
+<%= render 'answers/votes_score', answer: answer %>
 </td>
 <td>
 <article>

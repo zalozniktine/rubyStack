@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       #resources :likes, only: [:create, :destroy]
       member do
         patch "upvote", to: "answers#upvote"
+        patch "downvote", to: "answers#downvote"
       end
     end
   end
