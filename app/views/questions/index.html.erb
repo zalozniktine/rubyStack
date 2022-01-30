@@ -1,34 +1,34 @@
 <p id="notice"><%= notice %></p>
 <%= render "home/left" %>
-<h1>Questions</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h1>Questions</h1>
+    </div>
+    <div class="col-sm">
+      <%= link_to 'Ask Question', new_question_path, class:"btn btn-info question", style:"color:white" %>
+    </div>
+  </div>
+</div>
 <br>
 <hr>
 <br>
 
-<table>
-  <thead>
-    <tr>
-      <!--<th>Title</th>-->
-      <!--<th>Body</th>-->
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<table class="wide">
     <% @questions.each do |question| %>
-      <tr>
-        <td><%= link_to question.title, question %></td>
-        <td><% question.title %></td>
+      <tr class="underline">
+        <td class="smallTD"><%= question.answers.count %> answers</td>
+        <td><p class="top"> <%= link_to question.title, question, class:"link" %> </p></td>
+        <td><%= image_tag question.person.avatar, width: "20px" %></td>
+        <!--<td><% question.title %></td>
         <td><% question.body %></td>
         <td><% link_to 'Show', question %></td>
         <td><% link_to 'Edit', edit_question_path(question) %></td>
-        <td><% link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><% link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
-      <tr><td><hr><td></tr>
     <% end %>
-  </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Question', new_question_path %>
+

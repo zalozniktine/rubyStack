@@ -1,7 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: %i[ show edit update destroy ]
   before_action :authenticate_person!, only: %i[ edit update destroy create ]
-  before_action :get_answers
   
  
   # GET /questions or /questions.json
@@ -60,6 +59,7 @@ class QuestionsController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_question
@@ -72,7 +72,5 @@ class QuestionsController < ApplicationController
       params.require(:question).permit(:title, :body, :person_id)
     end
 
-    def get_answers
-      
-    end
+    
 end
