@@ -5,15 +5,13 @@
 
 
 <table><tr><td>
-Upvote:
-<%= render 'answers/upvote_link', answer: answer %>
-<br>
-Downvote:
-<%= render 'answers/downvote_link', answer: answer %>
-<br>
-Count:
-<%= render 'answers/votes_score', answer: answer %>
-</td>
+<table>
+<tr><td class="textarea">  <%= render 'answers/upvote_link', answer: answer %>  </td></tr>
+<tr><td class="textarea centerT">  <%= render 'answers/votes_score', answer: answer %>  </td></tr>
+<tr><td class="textarea">  <%= render 'answers/downvote_link', answer: answer %>  </td></tr>
+</table></td>
+
+
 <td>
 <article>
     <p><%= answer.content %></p>

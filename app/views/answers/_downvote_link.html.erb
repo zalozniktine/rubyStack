@@ -1,9 +1,9 @@
 <%= content_tag "div", id: "downvote-#{answer.id}" do %>
 <%= link_to downvote_question_answer_path(@question, answer) , method: :patch, remote: true, data: { disable_with: "voting..." } do %>
     <% if current_person.voted_down_on? answer %>
-      unvote
+      <i class="arrowdo"></i>
     <% else %>
-      downvote
+      <i class="arrow2"></i>
     <% end %>
   <% end %>
 <% end %>
