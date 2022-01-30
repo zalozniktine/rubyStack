@@ -1,3 +1,4 @@
 <%= content_tag "div", id: "votes-score-#{answer.id}" do %>
-  <%= answer.cached_votes_score %>
+  <% answer.cached_votes_score %>
+  <%= answer.get_likes.size - answer.get_dislikes.size  %>
 <% end %>
