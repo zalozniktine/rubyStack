@@ -1,7 +1,15 @@
 
+.centerT{
+    text-align: center;
+}
+.arr{
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+}
+
 
 p{
-    font-size: 15px;
+    font-size: 15px !important;
 }
 .sub-comment {
     padding-left: 20px;
@@ -18,6 +26,10 @@ p{
 .comment-form{
     display: none;
 }
+.hide{
+    visibility: hidden;
+}
+
 
 
 
@@ -63,3 +75,4 @@ p{
     //background: url("images/upo.png") no-repeat;
     display: inline-block;
 }
+

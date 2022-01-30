@@ -1,7 +1,9 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: %i[ show edit update destroy ]
   before_action :authenticate_person!, only: %i[ edit update destroy create ]
-
+  before_action :get_answers
+  
+ 
   # GET /questions or /questions.json
   def index
     @questions = Question.all
@@ -62,10 +64,15 @@ class QuestionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_question
       @question = Question.find(params[:id])
+      @answers = @question.answers.where(parent_id: nil)
     end
 
     # Only allow a list of trusted parameters through.
     def question_params
       params.require(:question).permit(:title, :body, :person_id)
+    end
+
+    def get_answers
+      
     end
 end

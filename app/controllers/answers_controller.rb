@@ -1,5 +1,19 @@
 class AnswersController < ApplicationController
-    before_action :authenticate_person!
+    before_action :set_answer, only: [:edit, :update, :show, :destroy, :like, :unlike]
+    before_action :authenticate_person! 
+
+
+
+    def upvote
+        @answer = Answer.find(params[:id])
+        if current_person.voted_up_on? @answer
+          @answer.unvote_by current_person
+        else
+          @answer.upvote_by current_person
+        end
+        render "vote.js.erb"
+      end
+
 
     def destroy
         Answer.find(params[:id]).destroy
@@ -16,6 +30,20 @@ class AnswersController < ApplicationController
         redirect_to question_path(params[:question_id])
     end
 
+    def like
+        @answer.liked_by current_person
+        respond_to do |format|
+            format.html {redirect_back fallback_location: root_path}
+        end
+    end
+
+    def unlike
+        @answer.unliked_by current_person
+        respond_to do |format|
+            format.html {redirect_back fallback_location: root_path}
+        end
+    end
+
     private
 
     def answer_params
@@ -24,5 +52,6 @@ class AnswersController < ApplicationController
         .permit(:content, :parent_id)
         .merge(question_id: params[:question_id])
     end
+
 
 end

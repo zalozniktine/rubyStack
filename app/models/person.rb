@@ -8,6 +8,7 @@ class Person < ApplicationRecord
          has_many :questions
          has_many :answers
          has_one_attached :avatar
+         
 
          has_many :likes, dependent: :destroy
 
@@ -24,4 +25,5 @@ class Person < ApplicationRecord
           end
           person
       end
+    acts_as_voter
 end

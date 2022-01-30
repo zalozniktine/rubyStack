@@ -1,4 +1,4 @@
-# app/controllers/users/omniauth_callbacks_controller.rb:
+#app/controllers/users/omniauth_callbacks_controller.rb:
 
 
 class People::OmniauthCallbacksController < Devise::OmniauthCallbacksController

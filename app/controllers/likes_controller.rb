@@ -4,7 +4,7 @@ class LikesController < ApplicationController
 
     def find_like
         @like = @answer.likes.find(params[:id])
-     end
+    end
 
     def create
 
