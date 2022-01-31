@@ -31,7 +31,7 @@ class AnswersController < ApplicationController
 
     def destroy
         Answer.find(params[:id]).destroy
-        redirect_to question_path(params[:question_id])
+        redirect_to activity_path
     end
 
     def create
@@ -67,5 +67,8 @@ class AnswersController < ApplicationController
         .merge(question_id: params[:question_id])
     end
 
+    def set_answer
+        @answer = Answer.find(params[:id])
+    end
 
 end

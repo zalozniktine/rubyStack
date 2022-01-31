@@ -12,16 +12,48 @@
 </table></td>
 
 
-<td>
+<td class="wide">
 <article>
-    <p><%= answer.content %></p>
+    <p class="zero"><%= answer.content %> <span class="nekaj">
+    
+    <% if answer.parent_id != nil %>
+    - <%= answer.person.username %>
+    <% end %>
+
+    </span></p>
 </article>
+</td></tr>
+
+
+
+<tr class="textarea"><td colspan="2">
+<span class="right">
+<table><tr><td>
 
 Answered:
 <%= answer.created_at.strftime("%a %d, %H:%M") %>
-</td></tr></table>
 
-<a href="" class="comment-form-display textarea">Reply</a>
+</td></tr>
+<tr><td>
+
+<% if answer.person.avatar.attached? %>
+<%= image_tag answer.person.avatar, width: "35px", height: "35px" %>
+<% else %>
+<%= image_tag ("default.jpg"), width: "35px", height: "35px" %>
+<% end %>
+<%= answer.person.username %>
+</td></tr>
+</table>
+</span>
+</td></tr>
+
+
+
+
+
+</table>
+
+<a href="" class="comment-form-display textarea">Add a comment</a>
 <div class="comment-form"> 
     <%= render partial: 'answers/form', locals: { question: @question, parent: answer }%>
 </div>
@@ -30,6 +62,9 @@ Answered:
 <div class="sub-comment">
 <%= render answer.answers %>
 </div>
+
+
+
 
 
 

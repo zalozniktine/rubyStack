@@ -1,3 +1,21 @@
+
+.nekaj .sub-comment{
+    display: inline !important;
+}
+
+.zero{
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.border{
+    border: solid black 1px;
+}
+
+.right{
+    float: right;
+}
+
 .smallTD{
     width:0.1%;
     white-space: nowrap;
@@ -19,6 +37,7 @@
     text-decoration: none;
     background-color: transparent;
     color: rgb(1, 141, 255) !important ;
+    
 }
 .link{
     color: rgb(1, 124, 224) !important ;
@@ -56,9 +75,7 @@ p{
     padding-left: 20px;
 }
 
-.sub-comment .textarea {
-    display:none;
-}
+
 .sub-comment .textarea {
     display:none;
 }
@@ -70,13 +87,19 @@ p{
 .hide{
     visibility: hidden;
 }
+.none{
+    display: none;
+}
 
 
-
+.pic{
+    src: image-url('down2.png') no-repeat;
+}
 
 .arrow2:hover {
     //background: url("images/down2.png") no-repeat;
     background: image-url('down2.png') no-repeat;
+    
 }
 .arrow2 {
     background-size: contain;
@@ -98,6 +121,8 @@ p{
 .arrow1:hover {
     //background: url("images/up2.png") no-repeat;
     background: image-url('up2.png') no-repeat;
+    text-decoration: none; 
+    color: inherit;
 }
 .arrow1 {
     background-size: contain;
