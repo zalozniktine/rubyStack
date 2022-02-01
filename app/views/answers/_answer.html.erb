@@ -3,25 +3,40 @@
 
 
 
-
-<table><tr><td>
+<% if answer.parent_id == nil %>
+<hr>
+<% end %>
+<table style="margin-top:20px"><tr>
+<td>
 <table>
 <tr><td class="textarea">  <%= render 'answers/upvote_link', answer: answer %>  </td></tr>
 <tr><td class="textarea centerT">  <%= render 'answers/votes_score', answer: answer %>  </td></tr>
 <tr><td class="textarea">  <%= render 'answers/downvote_link', answer: answer %>  </td></tr>
 </table></td>
 
-
+<% if answer.parent_id != nil %>
+<td class="wide underline">
+<% else %>
 <td class="wide">
-<article>
-    <p class="zero"><%= answer.content %> <span class="nekaj">
+<% end %>
+<div class="wide">
+    
     
     <% if answer.parent_id != nil %>
-    - <%= answer.person.username %>
+    <p class="zero comment"><%= answer.content %> <span class="nekaj">
+    - <span style="color:blue"><%= answer.person.username %>
+    </span>
+    <span style="color:grey">
+    <%=answer.created_at.strftime("%a %d, %H:%M")%>
+    </span>
+
+    <% else %>
+
+    <p class="zero"><%= answer.content %> <span class="nekaj">
     <% end %>
 
     </span></p>
-</article>
+</div>
 </td></tr>
 
 
@@ -54,12 +69,16 @@ Answered:
 </table>
 
 <a href="" class="comment-form-display textarea">Add a comment</a>
-<div class="comment-form"> 
-    <%= render partial: 'answers/form', locals: { question: @question, parent: answer }%>
-</div>
-<hr>
 
-<div class="sub-comment">
+<div class="comment-form">
+    <%= render partial: 'answers/form_comment', locals: { question: @question, parent: answer }%>
+</div>
+
+<% if answer.parent_id == nil %>
+<hr>
+<% end %>
+
+<div class="sub-comment wrap comment">
 <%= render answer.answers %>
 </div>
 

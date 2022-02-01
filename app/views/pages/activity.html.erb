@@ -17,8 +17,11 @@
 <% @questions.each do |question| %>
     <div class="vprasanja">
       <tr>
-        <td><%= question.title %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+        <% question.title %>
+        <%= link_to question.title, question %>
+        </td>
+        <td><%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     </div>
 <% end %>
@@ -28,16 +31,16 @@
 <h1>My Comments</h1>
 <div id="odgovori">
 <% @comments.each do |comment| %>
-<% @questions.each do |question| %>
+<%# @questions.each do |question| %>
     <div class="vprasanja">
       <tr>
-        <td><%= comment.content %></td>
+        <td><%= link_to comment.content, comment.question %> </td>
       </tr>
       <tr>
-        <td><%= link_to 'Delete', question_answer_path(question, comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', question_answer_path(comment.question_id, comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     </div>
-<% end %>
+<%# end %>
 <% end %>
 </div>
 
@@ -45,16 +48,16 @@
 <h1>My answers</h1>
 <div id="odgovori">
 <% @answers.each do |answer| %>
-<% @questions.each do |question| %>
+<%# @questions.each do |question| %>
     <div class="vprasanja">
       <tr>
-        <td><%= answer.content %></td>
+        <td><%= link_to answer.content, answer.question %><% answer.content %></td>
       </tr>
       <tr>
-        <td><%= link_to 'Delete', question_answer_path(question, answer), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', question_answer_path(answer.question_id, answer), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     </div>
-<% end %>
+<%# end %>
 <% end %>
 </div>
 

@@ -1,7 +1,5 @@
-<br>
 <hr>
-<br>
-<h3>Your Answer</h3>
+<p>Your Comment</p>
 <form action="<%= question_answers_path(question)%>" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
@@ -10,10 +8,7 @@
     <% end %>
 
     <div>
-        <textarea class="textarea form-control" name="answer[content]" rows="6" cols="20"></textarea>
+        <textarea style="max-width:100vh" class="textarea" name="answer[content]" rows="3" cols="200"></textarea>
     </div>
-    <br>
-    <input class="textarea btn btn-primary" type="submit" value="Post your answer">
+    <input class="textarea" type="submit" value="Submit">
 </form>
-
-

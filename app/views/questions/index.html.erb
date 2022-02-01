@@ -19,7 +19,7 @@
     <% @questions.each do |question| %>
       <tr>
         <td class="smallTD"><%= question.answers.count %> answers</td>
-        <td><p class="top"> <%= link_to question.title, question, class:"link" %> </p></td>
+        <td class="wide"><p class="top wrap"> <%= link_to question.title, question, class:"link" %> </p></td>
 
         
         <!--<td><%# image_tag question.person.avatar, width: "20px", height: "20px" %></td>-->

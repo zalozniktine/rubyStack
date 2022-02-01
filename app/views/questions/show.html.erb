@@ -1,24 +1,50 @@
 <!--<p id="notice"><%= notice %></p>-->
 <%= render "home/left" %>
 
-  <h2><%= @question.title %></h2>
-
-  <small>
-  Asked:
-  <%= @question.created_at.strftime("%a %d, %H:%M") %>
-  </small>
+<div>
+<table class="wide">
+<tr><td class="wide">
+  <h2 class="wrap"><%= @question.title %></h2>
   <hr>
+</td></tr>
+<tr><td>
+  <p>
+    <%= @question.body %>
+  </p>
+</td></tr>
+<tr><td>
 
+<div style="float:right">
+<table>
+  <tr>
+    <td> Asked: <%= @question.created_at.strftime("%a %d, %H:%M") %> </td>
+  </tr>
+  <tr>
+    <td>
+      <% if @question.person.avatar.attached? %>
+          <%= image_tag @question.person.avatar, width: "35px", height: "35px" %>
+      <% else %>
+          <%= image_tag ("default.jpg"), width: "35px", height: "35px" %>
+      <% end %>
+        <%= @question.person.username %> 
+    </td>
+  </tr>
+</table>
+</div>
 
-<p>
-  <%= @question.body %>
-</p>
-<p>
+<tr><td>
+
+<div style="float:left"><p>
   Answers: 
   <%= @answers.count %>
-  <hr>
-</p>
+</p></div>
+</td></tr>
 
+</td></tr>
+
+
+</table>
+<div>
 
 <p>
   <%= render @question.answers.where(parent_id: nil) %>
@@ -28,5 +54,5 @@
 
 
 
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+<% link_to 'Edit', edit_question_path(@question) %>
+<% link_to 'Back', questions_path %>
