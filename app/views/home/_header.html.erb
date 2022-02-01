@@ -7,10 +7,15 @@
   </form>
   <span class="navbar-text">
     <% if person_signed_in? %>
-    Signed in
     <br>
-    <%= link_to 'Profile  ', edit_person_registration_path %>
-    <%= link_to 'Sign Out', destroy_person_session_path, method: :delete %>
+    <% if @person.avatar.attached? %>
+        <%= image_tag @person.avatar, width: "40px", height: "40px" %>
+        <% else %>
+        <%= image_tag ("default.jpg"), width: "40px", height: "40px" %>
+        <% end %>
+
+    <%= link_to @person.username, edit_person_registration_path %>
+    <% link_to 'Sign Out', destroy_person_session_path, method: :delete %>
     <% else %>
     
     <%= link_to 'Sign in  ', new_person_session_path %>

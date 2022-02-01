@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+    before_action :set_person
+    
     def activity
         @user = current_person.id
         @questions = Question.where(person_id:@user)
@@ -19,5 +21,8 @@ class PagesController < ApplicationController
     def policy
     end
 
+    def set_person
+        @person = current_person
+    end
     
 end

@@ -5,8 +5,10 @@ body {
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px; }
+  font-size: 15px;
+  line-height: 18px; 
+  color: #000;
+}
 
 pre {
   background-color: #eee;
@@ -15,9 +17,9 @@ pre {
 
 a {
   color: #000; }
-
+  
 a:visited {
-  color: #666; }
+  color: rgb(0, 0, 0); }
 
 a:hover {
   

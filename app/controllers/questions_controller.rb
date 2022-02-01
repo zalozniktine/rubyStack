@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: %i[ show edit update destroy ]
   before_action :authenticate_person!, only: %i[ edit update destroy create ]
-  
+  before_action :set_person
  
   # GET /questions or /questions.json
   def index
@@ -70,6 +70,10 @@ class QuestionsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def question_params
       params.require(:question).permit(:title, :body, :person_id)
+    end
+
+    def set_person
+      @person = current_person
     end
 
     

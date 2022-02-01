@@ -13,15 +13,16 @@
 </ul>
 <br><br><br>
 <h1>My Questions</h1>
+<br>
 <div id="vprasanja">
 <% @questions.each do |question| %>
-    <div class="vprasanja">
+    <div class="vprasanja wide underline black">
       <tr>
         <td>
         <% question.title %>
-        <%= link_to question.title, question %>
+        <span class="wrap"><%= link_to question.title, question %></span>
         </td>
-        <td><%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' }, class:"blue" %></td>
       </tr>
     </div>
 <% end %>
@@ -29,15 +30,16 @@
 
 <hr>
 <h1>My Comments</h1>
+<br>
 <div id="odgovori">
 <% @comments.each do |comment| %>
 <%# @questions.each do |question| %>
-    <div class="vprasanja">
+    <div class="vprasanja wide underline">
       <tr>
-        <td><%= link_to comment.content, comment.question %> </td>
+        <td><span class="wrap"><%= link_to comment.content, comment.question %> </span></td>
       </tr>
       <tr>
-        <td><%= link_to 'Delete', question_answer_path(comment.question_id, comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', question_answer_path(comment.question_id, comment), method: :delete, data: { confirm: 'Are you sure?' }, class:"blue" %></td>
       </tr>
     </div>
 <%# end %>
@@ -46,15 +48,16 @@
 
 <hr>
 <h1>My answers</h1>
+<br>
 <div id="odgovori">
 <% @answers.each do |answer| %>
 <%# @questions.each do |question| %>
-    <div class="vprasanja">
+    <div class="vprasanja wide underline">
       <tr>
-        <td><%= link_to answer.content, answer.question %><% answer.content %></td>
+        <td><span class="wrap"><%= link_to answer.content, answer.question %><% answer.content %></span></td>
       </tr>
       <tr>
-        <td><%= link_to 'Delete', question_answer_path(answer.question_id, answer), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', question_answer_path(answer.question_id, answer), method: :delete, data: { confirm: 'Are you sure?' }, class:"blue" %></td>
       </tr>
     </div>
 <%# end %>
