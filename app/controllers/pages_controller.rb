@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
+    before_action :authenticate_person!, only: %i[ edit update destroy create activity ]
     before_action :set_person
+    
     
     def activity
         @user = current_person.id
