@@ -1,10 +1,17 @@
 <%= content_tag "div", id: "upvote-#{answer.id}" do %>
 <%= link_to upvote_question_answer_path(@question, answer) , method: :patch, remote: true do %>
-    <% if current_person.voted_up_on? answer %>
-      <i class="arrowo"></i>
+    <% if person_signed_in? %>
+
+      <% if current_person.voted_up_on? answer %>
+        <i class="arrowo"></i>
+      <% else %>
+        <i class="arrow1"></i>
+      <% end %>
+
     <% else %>
       <i class="arrow1"></i>
     <% end %>
+
   <% end %>
 <% end %>
 
