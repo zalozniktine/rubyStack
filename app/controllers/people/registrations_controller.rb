@@ -23,14 +23,6 @@ class People::RegistrationsController < Devise::RegistrationsController
   # def update
   #   super
   # end
-  def update_resource(resource, params)
-    if current_person.uid != nil
-      params.delete("current_password")
-      resource.update_without_password(params)
-    else
-      resource.update_with_password(params)
-    end
-  end
 
   # DELETE /resource
   # def destroy
