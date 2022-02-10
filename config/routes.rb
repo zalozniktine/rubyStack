@@ -9,8 +9,7 @@ Rails.application.routes.draw do
   
 
 
-  devise_for :people, controllers: { omniauth_callbacks: 'people/omniauth_callbacks'#, sessions: 'people/sessions' 
-  }
+  devise_for :people, controllers: { omniauth_callbacks: 'people/omniauth_callbacks', registrations: 'people/registrations' }
   resources :questions do
     resources :answers, only: [:create, :destroy] do
       #resources :likes, only: [:create, :destroy]
