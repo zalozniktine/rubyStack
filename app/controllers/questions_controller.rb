@@ -3,6 +3,11 @@ class QuestionsController < ApplicationController
   before_action :authenticate_person!, only: %i[ edit update destroy create ]
   before_action :set_person
  
+  def search
+    @questions = Question.where("UPPER(title) LIKE ?", "%" + params[:q].upcase + "%")
+
+  end
+
   # GET /questions or /questions.json
   def index
     @questions = Question.all
@@ -69,7 +74,7 @@ class QuestionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def question_params
-      params.require(:question).permit(:title, :body, :person_id)
+      params.require(:question).permit(:title, :body, :person_id, :questionn)
     end
 
     def set_person

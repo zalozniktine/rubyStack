@@ -1,0 +1,46 @@
+<%= render "home/left" %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h1>Questions</h1>
+    </div>
+    <div class="col-sm">
+      <%= link_to 'Ask Question', new_question_path, class:"btn btn-info question", style:"color:white" %>
+    </div>
+  </div>
+</div>
+<br>
+<hr>
+<br>
+
+<table>
+    <% @questions.each do |question| %>
+      <tr>
+        <td class="smallTD"><%= question.answers.count %> answers</td>
+        <td class="wide"><p class="top wrap"> <%= link_to question.title, question, class:"link" %> </p></td>
+
+        
+        <!--<td><%# image_tag question.person.avatar, width: "20px", height: "20px" %></td>-->
+        <!--<td><%# question.title %></td>
+        <td><% question.body %></td>
+        <td><% link_to 'Show', question %></td>
+        <td><% link_to 'Edit', edit_question_path(question) %></td>
+        <td><% link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+      </tr>
+      <tr class="underline">
+        <td colspan="2">
+        <span class="right">
+        <% if question.person.avatar.attached? %>
+        <%= image_tag question.person.avatar, width: "20px", height: "20px" %>
+        <% else %>
+        <%= image_tag ("default.jpg"), width: "20px", height: "20px" %>
+        <% end %>
+        <!--<img class="pic" width="20" height="20"> -->
+        <%= question.person.username %>
+        </span>
+        </td>
+      </tr>
+    <% end %>
+</table>
+
+<br>

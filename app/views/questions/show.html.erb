@@ -9,7 +9,7 @@
 </td></tr>
 <tr><td>
   <p>
-    <%= @question.body %>
+    <%= @question.questionn %>
   </p>
 </td></tr>
 <tr><td>
@@ -47,7 +47,7 @@
 <div>
 
 <p>
-  <%= render @question.answers.where(parent_id: nil) %>
+  <%= render @question.answers.where(parent_id: nil).order(cached_weighted_score: :desc) %>
   <%= render partial: 'answers/form', locals: { question: @question, parent: @answer } %>
 </p>
   

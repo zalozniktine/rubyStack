@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'policy', to: 'pages#policy'
   get 'lajk', to: 'answers#like'
 
+  get 'search', to: 'questions#search'
+
   
 
 

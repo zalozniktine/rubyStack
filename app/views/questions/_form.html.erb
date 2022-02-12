@@ -18,8 +18,13 @@
   </div>
 
   <div class="field form-group">
-    <%= form.label :body %>
-    <%= form.text_area :body, class:'form-control', rows:'5' %>
+    <% form.label :body %>
+    <% form.text_area :body, class:'form-control', rows:'5' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :questionn %>
+    <%= form.rich_text_area :questionn %>
   </div>
 
   <div class="field form-group">
