@@ -1,24 +1,34 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## STACKCLOUD 
+Stackcloud is stawkoverflow.com clone
 
-Things you may want to cover:
 
-* Ruby version
+## Description
+The web application includes creating user accounts, asking questions and answering them, liking and disliking answers, uploading images to the user account and supporting Google authentication.
 
-* System dependencies
 
-* Configuration
+## Technologies
+- Ruby on Rails
+- Postgresql
+- HTML, CSS, JS
 
-* Database creation
+## Screenshots
+-home page
 
-* Database initialization
+![image](https://user-images.githubusercontent.com/59819615/154058534-a83c1ef9-0bfa-4f4e-9200-f823871d3fb9.png)
 
-* How to run the test suite
+-ask questions
 
-* Services (job queues, cache servers, search engines, etc.)
+![image](https://user-images.githubusercontent.com/59819615/154058644-85e77ef9-2e0c-4478-b04d-74c1e8c1c669.png)
 
-* Deployment instructions
+-participate in descusions
+![image](https://user-images.githubusercontent.com/59819615/154059166-9a7af67b-bd97-4cc6-9136-cb2db496f936.png)
 
-* ...
+
+
+
+
+
+
+
