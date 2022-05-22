@@ -3,7 +3,6 @@
 ## STACKCLOUD 
 Stackcloud is stawkoverflow.com clone
 
-Link to heroku website: https://online--books.herokuapp.com/
 
 ## Description
 The web application includes creating user accounts, asking questions and answering them, liking and disliking answers, uploading images to the user account and supporting Google authentication.
@@ -23,11 +22,11 @@ The web application includes creating user accounts, asking questions and answer
 
 ![image](https://user-images.githubusercontent.com/59819615/154058644-85e77ef9-2e0c-4478-b04d-74c1e8c1c669.png)
 
--learn more about the books
-![image](https://user-images.githubusercontent.com/59819615/167575390-7a43881a-6498-4635-8ae5-0c9763c8fc20.png)
+-participate in descusions
+![image](https://user-images.githubusercontent.com/59819615/154059166-9a7af67b-bd97-4cc6-9136-cb2db496f936.png)
 
--read books
-![image](https://user-images.githubusercontent.com/59819615/167575690-35084f44-d2c5-4d19-b5bb-f3da1dc9281a.png)
+
+
 
 
 
