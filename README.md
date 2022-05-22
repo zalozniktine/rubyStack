@@ -22,7 +22,8 @@ The web application includes creating user accounts, asking questions and answer
 
 ![image](https://user-images.githubusercontent.com/59819615/154058644-85e77ef9-2e0c-4478-b04d-74c1e8c1c669.png)
 
--participate in descusions
+-participate in descussions
+
 ![image](https://user-images.githubusercontent.com/59819615/154059166-9a7af67b-bd97-4cc6-9136-cb2db496f936.png)
 
 
