@@ -23,6 +23,7 @@
         <span class="wrap"><%= link_to question.title, question %></span>
         </td>
         <td><%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' }, class:"blue" %></td>
+        <td><%= link_to 'Edit', edit_question_path(question), class:"blue" %></td>
       </tr>
     </div>
 <% end %>
